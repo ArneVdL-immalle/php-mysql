@@ -8,7 +8,7 @@ include 'db_credentials.php';
 // dit niet persé in php te doen.
 
 function voegBerichtToe($conn, $inhoud) {
-    $sql = "INSERT INTO ... 
+    $sql = "INSERT INTO messages (inhoud, tijdstip) 
         VALUES('$inhoud', now())";
     $conn->exec($sql);
 }
@@ -19,7 +19,7 @@ try {
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    echo getdate();
+    print_r(getdate());
     voegBerichtToe($conn, "Testbericht ");
     echo "Bericht toegevoegd op " . date('Y-m-d H:i:s') . " ... Check de tabel in de database...";
 }

@@ -12,7 +12,12 @@ try {
 
     // vervolledig de code om 3 testberichten toe te voegen
     // m.b.v. bovenstaand prepared statement
-
+    $stmt->bindValue(':inhoud', 'test', PDO::PARAM_STR);
+    $stmt->execute();
+    $stmt->bindValue(':inhoud', '2569', PDO::PARAM_STR);
+    $stmt->execute();
+    $stmt->bindValue(':inhoud', 'test126', PDO::PARAM_STR);
+    $stmt->execute();
 
     echo "3 testberichten toegevoegd...";
 }
